@@ -14,7 +14,7 @@ git push origin HEAD
 git checkout develop
 
 # create release PR
-gh pr create --base master --head $releaseBranch --fill
+gh pr create --base master --head $releaseBranch -b "Release PR for v$versionLabel" -t "Release/$versionLabel"
 
 # merge release branch with the new version number into master
 git checkout $masterBranch
@@ -39,4 +39,4 @@ git push origin develop
 git branch -D $releaseBranch
 
 # create release
-gh release create v$versionLabel -t v$versionLabel
+gh release create v$versionLabel -t v$versionLabel --fill

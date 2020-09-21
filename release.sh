@@ -12,7 +12,7 @@ releaseBranch=release/$versionLabel
 git checkout -b release/$versionLabel
 
 # create release PR
-gh pr create -b master -t "release/$versionLabel" --head release/$versionLabel
+gh pr create -b master -t "release/$versionLabel" -f -h develop
 
 # merge release branch with the new version number into master
 git checkout $masterBranch

@@ -38,4 +38,4 @@ git push origin develop
 git branch -D $releaseBranch
 
 # create release
-gh release create v$versionLabel
+gh release create -tv$versionLabel

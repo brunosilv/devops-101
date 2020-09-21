@@ -10,10 +10,9 @@ releaseBranch=release/$versionLabel
 
 # create release branch
 git checkout -b release/$versionLabel
-git push origin HEAD
 
 # create release PR
-gh pr create -b master -t "release/$versionLabel"
+gh pr create -b master -t "release/$versionLabel" -head -body
 
 # merge release branch with the new version number into master
 git checkout $masterBranch
@@ -38,4 +37,4 @@ git push origin develop
 git branch -D $releaseBranch
 
 # create release
-gh release create -tv$versionLabel
+gh release create -t v$versionLabel -F CHANGELOG.md

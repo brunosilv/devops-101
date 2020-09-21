@@ -10,6 +10,7 @@ releaseBranch=release/$versionLabel
 
 # create release branch
 git checkout -b release/$versionLabel
+git push origin HEAD
 
 # create release PR
 gh pr create -b master --fill
